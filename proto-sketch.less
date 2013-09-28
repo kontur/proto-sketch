@@ -1,0 +1,152 @@
+/**
+ * ProtoSketch
+ * ===========
+ * a stylesheet for giving your semantic html prototypes a sketched look
+ *
+ * Johannes "kontur" Neumeier
+ * http://johannesneumeier.com
+ *
+ * v0.0.1
+ *
+ * You can use, modify or distribute this code in any way you seem fit, as long 
+ * as the original credit notice at the top is retained. No warranties.
+ *
+ */
+
+
+// handwritten font
+@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+
+// a box with drawn outlines
+.border-box(@borderWidth: 15) {
+	background-color: rgba(255, 255, 255, 0.95);
+	border: 0px+@borderWidth solid #333;
+	border-image: url(proto-sketch-images/border-box.svg) 4% 4% 4% 4% repeat;
+	padding: 0.25em;
+	margin-bottom: 0.25em;
+}
+
+.border-bottom() {	
+	border-width: 15px;
+	border-image: url(proto-sketch-images/border-box.svg) 3% 3% 3% 3% repeat;
+	border-width: 0;
+	border-bottom-width: 10px;
+	display: inline-block;
+	padding: 0.25em 0.25em 0;
+}
+
+// a X that stretches to the corners of its container
+.background-crossed {
+	// .svg's don't support 100% 100%, so use a .png instead
+	background: rgba(255, 255, 255, 0.95) url(proto-sketch-images/cross.png) no-repeat center center;
+	background-size: 100% 100%;
+	// use translate3d to force smoothened rendering
+	transform: translate3d(0, 0, 0);
+}
+
+html {
+	background: #dddddd;
+}
+
+body {
+	background: #ffffff;
+	color: rgba(0, 0, 0, 0.25);
+	font-family: "Reenie Beanie", cursive, sans-serif;
+	font-size: 1.25em;
+	line-height: 1em;
+	.border-box;
+	margin: 0.5em;
+}
+
+/*
+ * typographic elements
+ */
+h1, h2, h3, h4, h5, h6 {
+	color: rgba(0, 0, 0, 0.75);
+	line-height: 1em;
+}
+
+a {
+	background: rgba(255, 255, 255, 0.95);
+	.border-bottom;
+	text-decoration: none;
+}
+
+address {
+	display: inline-block;
+	.border-box;
+}
+
+small { font-size: smaller; }
+em { text-transform: uppercase; }
+strong { text-transform: uppercase; }
+
+/*
+ * top level layout and wrapper elements
+ */
+header, article, section, header, footer, aside {
+	.border-box;
+}
+
+header, footer {
+	background-color: lightgrey;
+}
+
+/*
+ * media elements
+ */
+img, video {
+	.border-box;
+	.background-crossed;
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+/*
+ * form and input elements
+ */
+form {
+	.border-box;
+	background-color: #ffeebb;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+input, textarea {
+	.border-box;
+	margin-bottom: 0.5em;
+}
+
+// text input
+input[type="text"],
+input[type="email"],
+textarea {
+	color: rgba(0, 0, 0, 0.25);
+	font-family: monospace;
+	padding: 0.1em 0.25em;
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	font: inherit;
+	.border-box;
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+input[type="submit"] {
+	background-color: #bbffbb;
+}
+
+input[type="reset"] {
+	background-color: #ffbbaa;
+}
+
+label {
+	.border-bottom;
+}
+
+legend {
+	.border-box;
+}
+
+fieldset {
+	.border-box;
+}
