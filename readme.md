@@ -6,7 +6,11 @@ What is it and how do I use it?
 ---
 ProtoSketch is a simple stylesheet that transforms the look of your plain html markup into a sketch-like prototype.
 
-You can use it in early prototyping phases of your project to highlight the structure of the elements on your page without specifying a distinct visal style.
+**This example compares the output of example/example.html with plain html (left) to proto-css styled (right):**
+
+![Left side: plain html, right side: with proto-css](example/example.html-comparison.png "Comparing the example/example.html with plain html (left) to proto-css styled (right)")
+
+You can ProtoSketch it in early prototyping phases of your project to highlight the structure of the elements on your page without specifying a distinct visal style.
 
 To use it you need to nothing more than **drop in the stylesheet to your project and start coding** you own html and layout css. ProtoSketch's stylesheet automatically highlights the elements in your document by their implied semantic structure:
 
@@ -22,6 +26,8 @@ So what gets highlighted:
 * forms and form elements like `form`, `fieldset`, `legend`, `label`, `input`
 * other meaningful elements like `button`, `a`, `address`, `ul`, `ol`, `li` and typographic elements like `h1-6`, `em`, `strong`, `p`, `small`
 * `img` and `video` (given you leave the src attribute or child tag empty) will display without content but with an icon only
+
+You can also use the css classes `.border-box` and `.background-crossed` to manually select items to highlight. (More customizations to come...)
 
 Last but not least:
 ---
